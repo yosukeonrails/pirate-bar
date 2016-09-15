@@ -138,17 +138,15 @@ var toppingID=-1
 
 		$(".liquor-select li,.flavor-select li,.topping-select li ").css("background-color","transparent");
 
-	var drink= function(myDrinkNickname, myDrink, myFlavor,myLiquor,myTopping){
+	var drink= function( myFlavor,myLiquor,myTopping){
 
-		this.nickname=myDrinkNickname
-		this.ingredients=myDrink
 		this.flavor= myFlavor;
 		this.liquor= myLiquor;
 		this.topping= myTopping;
 
 	}	
 
-    var myNewDrink= new drink (myDrinkNickname, myDrink,myFlavor,myLiquor,myTopping)
+    var myNewDrink= new drink ( myFlavor,myLiquor,myTopping)
 
     
     drinkOrders.push(myNewDrink)

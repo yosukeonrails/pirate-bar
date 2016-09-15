@@ -1,23 +1,27 @@
 var flavors= [
-
+ 
 	 {
 		name:'Apple',
-		nickname:'Cinder'
+		nickname:'Cinder',
+		price:1.00
 		} ,
 
 		{
 		name:'Passion Fruit',
-		nickname:'Passionate'
+		nickname:'Passionate',
+		price:1.00
 		},
 
 		{
 		name:'Coke',
-		nickname:'Ruby'
+		nickname:'Ruby',
+		price:1.00
 		},
 
 		{
 		name:'Lime',
-		nickname:'Citrus'
+		nickname:'Citrus',
+		price:1.00
 		}  
 
 		]
@@ -26,22 +30,26 @@ var liquors= [
 
 	 {
 		name:'Vodka',
-		nickname:'Spike'
+		nickname:'Spike',
+		price: 3.00
 		} ,
 
 		{
 		name:'Gin',
-		nickname:'Jenny'
+		nickname:'Jenny',
+		price: 3.50
 		},
 
 		{
 		name:'Whiskey',
-		nickname:'Tanny'
+		nickname:'Tanny',
+		price: 4.00
 		},
 
 		{
 		name:'Tequila',
-		nickname:'Mary'
+		nickname:'Mary',
+		price:3.50
 		}  
 
 		]
@@ -51,22 +59,26 @@ var toppings= [
 
 	 {
 		name:'With Olives',
-		nickname:'with Olives'
+		nickname:'with Olives',
+		price:1.50
 		} ,
 
 		{
 		name:'Cherry on Top',
-		nickname:'with cherry on top'
+		nickname:'with cherry on top',
+		price:1.00
 		},
 
 		{
 		name:'Salted Rim',
-		nickname:'with Salted Rim'
+		nickname:'with Salted Rim',
+		price:0.50
 		},
 
 		{
 		name:'Peel of Orange',
-		nickname:'with a peel of Orange'
+		nickname:'with a peel of Orange',
+		price:1.00
 		}  
 
 		]
