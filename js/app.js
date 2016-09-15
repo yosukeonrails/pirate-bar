@@ -6,7 +6,7 @@ var myFlavor="";
 var myTopping="";
 
 
-
+var drinkOrders= []
 
 
 
@@ -30,7 +30,7 @@ var myTopping="";
 
     myFlavor=  flavors[this.id]
 
-	console.log(myFlavor)
+	console.log(myFlavor);
 
 
 $(".flavor-select li").css("background-color","transparent");
@@ -43,12 +43,12 @@ var liquorID=-1
 
 	$.each(liquors , function(index, value ){
 
-	  liquorID++
+	  liquorID++;
 
-	value.id=liquorID
+	value.id=liquorID;
 
 
-	$('.liquor-select').append('<li id='+ (liquorID) +'>'+value.name +'</li>')
+	$('.liquor-select').append('<li id='+ (liquorID) +'>'+value.name +'</li>');
 
 
 
@@ -108,6 +108,8 @@ var toppingID=-1
 
    	if(myFlavor.nickname== undefined || myLiquor.nickname== undefined ){
    		alert(' Please choose your flavor and your liquor of choice!')
+
+   		return
    	} 
 
     else if (myTopping.nickname==undefined){
@@ -120,7 +122,7 @@ var toppingID=-1
    else 
    {
 
-   		var myDrinkNickname= 'Here is your '+ myFlavor.nickname+ ' '+myLiquor.nickname+' '+myTopping.nickname +' !'
+   		var myDrinkNickname= 'Here is your '+ myFlavor.nickname+ ' '+myLiquor.nickname+' 	'+myTopping.nickname +' !'
     var myDrink= 'It\'s '+ myFlavor.name +' flavored '+ myLiquor.name +' '+ myTopping.nickname+'. '+'Enjoy! your drink!'
 
    	}
@@ -128,12 +130,53 @@ var toppingID=-1
     console.log(myDrinkNickname);
    	console.log(myDrink);
 
+   	$('.main h1').text(myDrinkNickname)
+   		$('.main h2').text(myDrink)
 
-		myLiquor=""
-		myFlavor=""
-		myTopping=""
+
+		
 
 		$(".liquor-select li,.flavor-select li,.topping-select li ").css("background-color","transparent");
+
+	var drink= function(myDrinkNickname, myDrink, myFlavor,myLiquor,myTopping){
+
+		this.nickname=myDrinkNickname
+		this.ingredients=myDrink
+		this.flavor= myFlavor;
+		this.liquor= myLiquor;
+		this.topping= myTopping;
+
+	}	
+
+    var myNewDrink= new drink (myDrinkNickname, myDrink,myFlavor,myLiquor,myTopping)
+
+    
+    drinkOrders.push(myNewDrink)
+
+    console.log(drinkOrders[0].nickname)
+     console.log(drinkOrders.length)
+
+     $('.my-orders li').remove();
+
+  for( i=0 ;  i < drinkOrders.length ; i++  ) {
+
+  	if(drinkOrders[i].topping.nickname==undefined){
+  		$('.my-orders ul').append('<li>'+ drinkOrders[i].flavor.nickname + ' '+ drinkOrders[i].liquor.nickname+'</li>')
+  	} 
+  	   else
+
+    	$('.my-orders ul').append('<li>'+ drinkOrders[i].flavor.nickname + ' '+ drinkOrders[i].liquor.nickname+' '+drinkOrders[i].topping.nickname+'</li>')
+    	
+    }
+
+
+	myLiquor=""
+	myFlavor=""
+	myTopping=""
+
+
+    
+
 
    })
 
