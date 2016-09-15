@@ -114,6 +114,8 @@ var toppingID=-1
 
     else if (myTopping.nickname==undefined){
 
+    	
+
    		var myDrinkNickname= 'Here is your '+ myFlavor.nickname+ ' '+myLiquor.nickname+'  !'
     var myDrink= 'It\'s '+ myFlavor.name +' flavored '+ myLiquor.name +'. '+'Enjoy! your drink!'
 
@@ -156,9 +158,14 @@ var toppingID=-1
 
      $('.my-orders li').remove();
 
+
+
   for( i=0 ;  i < drinkOrders.length ; i++  ) {
 
+
+
   	if(drinkOrders[i].topping.nickname==undefined){
+
   		$('.my-orders ul').append('<li>'+ drinkOrders[i].flavor.nickname + ' '+ drinkOrders[i].liquor.nickname+'</li>')
   	} 
   	   else
@@ -177,73 +184,5 @@ var toppingID=-1
 
 
    })
-
-
-     
-///////============================////
-
-// var drink= function(flavor,liquor,topping){
-
-// 	 this.liquor = liquor
-// 	 this.flavor = flavor
-// 	 this.topping = topping
-
-// 	this.info = function(){
-// 		console.log ('Your drink is composed of  '+ liquor + " , "+ flavor + " with " +topping )
-// 	}
-
-
-// }
-
-
-
-
-// $('#submit').click(function(){
-
-
-// var myDrink = new drink(flavor,liquor ,topping);
-
-//   myDrink.info();
-
-
-
-
-// })
-
-
-// drink.prototype.nickname= function(){
-
-// 		if(this.flavor =='Apple'){
-// 		flavor='Cinder'
-// 		} 
-// 		if(this.flavor =='Passion Fruit'){
-// 		flavor='Sunny'
-// 		}
-// 		if(this.flavor =='Coke'){
-// 		flavor='Ruby'
-// 		}
-// 		if(this.flavor == 'Lime'){
-
-// 		flavor='Citrus'
-// 		}
-
-
-// 	    if(this.liquor=='Vodka'){
-// 	    	liquor= 'Spike'
-// 	    }	    
-// 	    if(this.liquor=='Gin'){
-// 	    	liquor= 'Jenny'
-// 	    }
-// 	    if(this.liquor=='Whiskey'){
-// 	    	liquor= 'Tan'
-// 	    }
-// 	    if(this.liquor=='Tequila'){
-// 	    	liquor= 'Merry'
-// 	    }
-
-//      console.log( 'Your Drink is a ' + flavor+ ' '+liquor+' with '+ this.topping)
-// }
-
-// myDrink.nickname();
 
 
