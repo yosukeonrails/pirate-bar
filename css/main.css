@@ -1,6 +1,15 @@
-li {list-style: none;}
+body{
+	margin:0;
+	padding:0;
+
+}
+
+li {list-style: none;
+   margin-bottom: 10px;}
 
 ul {display: inline-block;}
 
-.menu-container { border: 1px solid black ;
+.menu-container {
+ border: 1px solid black ;
+
  }

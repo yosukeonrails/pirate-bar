@@ -99,6 +99,8 @@ console.log(myTopping)
 
 $("#submit").click(function(){
 
+	event.preventDefault();
+
 if(myFlavor.nickname== undefined || myLiquor.nickname== undefined ){
 alert(' Please choose your flavor and your liquor of choice!')
 
@@ -152,7 +154,7 @@ $('.my-orders li').remove();
 console.log(drinkOrders)
 
 
-var totalPrice=[]
+var priceArray=[]
 
 for( i=0 ;  i < drinkOrders.length ; i++  ) {
 
@@ -162,25 +164,34 @@ var NoToppingPrice= drinkOrders[i].flavor.price+drinkOrders[i].liquor.price
 
 if(drinkOrders[i].topping.nickname==undefined){
 
-$('.my-orders ul').append('<li>'+ drinkOrders[i].flavor.nickname + ' '+ drinkOrders[i].liquor.nickname +'   '+ NoToppingPrice+'</li>')
+$('.my-orders ul').append('<li>'+ drinkOrders[i].flavor.nickname + ' '+ drinkOrders[i].liquor.nickname +'   '+ NoToppingPrice+'$'+'</li>')
 
-totalPrice.push(NoToppingPrice)
+priceArray.push(NoToppingPrice)
 
 } 
 
 else {
 
-$('.my-orders ul').append('<li>'+ drinkOrders[i].flavor.nickname + ' '+ drinkOrders[i].liquor.nickname+' '+drinkOrders[i].topping.nickname+'    '+ drinkPrice+'</li>')
+$('.my-orders ul').append('<li>'+ drinkOrders[i].flavor.nickname + ' '+ drinkOrders[i].liquor.nickname+' '+drinkOrders[i].topping.nickname+'    '+ drinkPrice+ '$'+'</li>')
 
-totalPrice.push(drinkPrice)
+priceArray.push(drinkPrice)
 
 }
 
+var totalPrice=priceArray.reduce(add, 0);
+
+function add(a, b) {
+
+    return a + b;
+}
+
+console.log(priceArray)
 console.log(totalPrice)
+
 
 }
 //end of For loop
-
+$('.my-orders h2').text('Total: '+totalPrice +'$');
 
 myLiquor=""
 myFlavor=""
