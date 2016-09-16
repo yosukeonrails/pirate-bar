@@ -1,7 +1,6 @@
 body{
 	margin:0;
 	padding:0;
-
 }
 
 li {list-style: none;
@@ -10,6 +9,33 @@ li {list-style: none;
 ul {display: inline-block;}
 
 .menu-container {
+
  border: 1px solid black ;
 
+ margin-bottom: 20px;
+
+
  }
+
+ .fixedwidth , .my-orders {
+
+ 	width: 800px;
+	margin:auto;
+	padding:auto;
+
+}
+
+button {
+	height: 50px;
+	width: 300px;
+	 display: table;
+    margin: 0 auto;
+}
+h1 , h2{
+	text-align: center;
+}
+
+.my-orders li{
+	margin-left: 250px;
+}
+
